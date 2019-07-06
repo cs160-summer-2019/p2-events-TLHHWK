@@ -21,7 +21,7 @@
 				<h3>Task 1b</h3>
 			</div>
 			<div class="col-6">
-				<button class="btn btn-light float-right">
+				<button class="btn btn-light float-right" id = "StopButton">
 					Stop
 				</button>
 			</div>
@@ -29,9 +29,11 @@
 
 		<div class="row">
 			<div class="col-12">
-				<div class="shape-container">
+				<div class="shape-container" id = "containerMain">
 					<!-- Dynamically add your circles here! -->
-					<!-- Example circle: <div class="p2-circle bg-blue"></div> -->
+					<div class="p2-circle bg-blue"></div>
+          <div class="p2-circle bg-blue"></div>
+          <div class="p2-circle bg-blue"></div>
 				</div>
 			</div>
 		</div>
@@ -39,8 +41,19 @@
 
 
 <script type="text/javascript">
+  function test(){
+        $("#containerMain").append('<div class="p2-circle bg-blue"></div>')
+    
+    }
+  
+ $(document).ready(function () { 
+  var hwk = setInterval("test()","1000");
+    $("#StopButton").on('click',()=>{clearInterval(hwk);})
+    
+//      $("#containerMain").prepend("<div class="p2-circle bg-blue"></div>"); 
 
-	// your solution here
+ });
+
 
 </script>
 </body>
